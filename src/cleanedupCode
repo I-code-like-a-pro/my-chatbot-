@@ -1,0 +1,16 @@
+   /* const chatmessages = array[0]; */
+      /* const setChatMessages = array[1]; */
+/* 
+      const sendMessage = ()=>{
+           setChatMessages(
+            [
+                  ...chatMessages,
+                  {
+                        message:'test',
+                        sender:'user',
+                        id:crypto.randomUUID()
+                  }
+            ]
+           )
+
+      } */
