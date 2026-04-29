@@ -1,12 +1,8 @@
 import { useState } from 'react'
-import Chatbot from './chatbot';
 import './App.css'
 
 import ChatInput from './components/chatinput'
 import ChatMessage from './components/chatmessage'
-import { getChatResponse } from './gemini';
-
-geminiMessage = await getChatResponse
 
 function App() {
       const [chatMessages,setChatMessages] = useState(
@@ -31,27 +27,21 @@ function App() {
                   sender:"robot",
                   id:'id4'
             }]);
-  return (
-      <div className='app-container'>
-             <ChatInput
-      chatMessages={chatMessages}
-      setChatMessages={setChatMessages}
-    />
-      {chatMessages.map((chatMessage) =>{
-            return(
-                  <ChatMessage
-                        message={chatMessage.message}
-                        sender={chatMessage.sender}
-                        key={chatMessage.id}
-                        chatMessage={chatMessages}
-
-                  />
-            )
-
-      })}
-      
-      </div>
-  )
+return (
+    <div className='app-container'>
+        {chatMessages.map((chatMessage) => (
+            <ChatMessage
+                message={chatMessage.message}
+                sender={chatMessage.sender}
+                key={chatMessage.id}
+            />
+        ))}
+        <ChatInput
+            chatMessages={chatMessages}
+            setChatMessages={setChatMessages}
+        />
+    </div>
+)
 }
 
 export default App
