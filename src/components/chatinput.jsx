@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import Chatbot from '../chatbot';
+import { getChatResponse } from '../gemini';
 
 function ChatInput({ chatMessages, setChatMessages}){
     const [inputText,setInputText] = useState('');
@@ -8,7 +8,7 @@ function ChatInput({ chatMessages, setChatMessages}){
         setInputText(event.target.value)
 
     }
-    const sendMessage = ()=>{
+    const  sendMessage = async ()=>{
         const newChatMesages =   [
                   ...chatMessages,
                   {
@@ -18,7 +18,7 @@ function ChatInput({ chatMessages, setChatMessages}){
                   }
             ]
            setChatMessages(newChatMesages)
-           const response = Chatbot.getResponse(inputText);
+           const response = await getChatResponse(inputText);
             setChatMessages(
             [
                   ...newChatMesages,

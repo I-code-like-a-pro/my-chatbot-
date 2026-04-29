@@ -4,6 +4,9 @@ import './App.css'
 
 import ChatInput from './components/chatinput'
 import ChatMessage from './components/chatmessage'
+import { getChatResponse } from './gemini';
+
+geminiMessage = await getChatResponse
 
 function App() {
       const [chatMessages,setChatMessages] = useState(
