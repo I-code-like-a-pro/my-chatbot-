@@ -17,6 +17,7 @@ function ChatInput({ chatMessages, setChatMessages}){
                         id:crypto.randomUUID()
                   }
             ]
+            setInputText('')
            setChatMessages(newChatMesages)
            const response = await getChatResponse(inputText);
             setChatMessages(
@@ -28,8 +29,6 @@ function ChatInput({ chatMessages, setChatMessages}){
                         id:crypto.randomUUID()
                   }
             ])
-
-           setInputText('')
 
       }
 
