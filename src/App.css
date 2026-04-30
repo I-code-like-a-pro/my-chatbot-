@@ -148,3 +148,35 @@ body {
 .send-button:hover {
   background: #178a63;
 }
+
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 100%;
+    margin: 0;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .bubble {
+    max-width: 85%;
+    font-size: 14px;
+  }
+
+  .chat-header {
+    padding: 12px;
+  }
+
+  .header-title {
+    font-size: 14px;
+  }
+
+  .chat-input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .send-button {
+    width: 40px;
+    height: 40px;
+  }
+}
