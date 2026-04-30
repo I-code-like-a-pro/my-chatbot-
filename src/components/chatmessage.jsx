@@ -1,6 +1,7 @@
 import react from 'react'
 import viteLogo from '/vite.svg'
 import reactLogo from '../assets/react.svg'
+import {Bot, User} from 'lucide-react'
 
 
 function ChatMessage({message,sender,chatMessages}){
@@ -13,11 +14,13 @@ function ChatMessage({message,sender,chatMessages}){
         >
             {
                 sender === "robot" && 
-                (<img src={reactLogo} alt="" width="50" />
+                ( <div className='avatar bot-icon'><Bot size={16}/></div>
             )}
-            {message}
+            <div className={`bubble ${sender === 'user' ? 'bubble-user' : 'bubble-robot'}`}>
+        {message}
+      </div>
             {(sender === "user") && 
-            (<img src={viteLogo} alt="" width="50" />)}
+            ( <div className='avatar user-icon'><User size={16}/></div>)}
         </div>
     )
 

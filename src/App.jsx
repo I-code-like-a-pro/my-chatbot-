@@ -3,6 +3,7 @@ import './App.css'
 
 import ChatInput from './components/chatinput'
 import ChatMessage from './components/chatmessage'
+import Header from './components/Header'
 
 function App() {
       const [chatMessages,setChatMessages] = useState(
@@ -28,8 +29,13 @@ function App() {
                   id:'id4'
             }]);
 return (
+
+    
     <div className='app-container'>
-        {chatMessages.map((chatMessage) => (
+
+        <Header/>
+       <div className='messages-container'>
+         {chatMessages.map((chatMessage) => (
             <ChatMessage
                 message={chatMessage.message}
                 sender={chatMessage.sender}
@@ -40,6 +46,8 @@ return (
             chatMessages={chatMessages}
             setChatMessages={setChatMessages}
         />
+
+       </div>
     </div>
 )
 }

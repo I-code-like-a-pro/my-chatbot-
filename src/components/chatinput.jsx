@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 import { getChatResponse } from '../gemini';
-
+import { Send } from 'lucide-react'
 function ChatInput({ chatMessages, setChatMessages}){
     const [inputText,setInputText] = useState('');
 
@@ -43,7 +43,9 @@ function ChatInput({ chatMessages, setChatMessages}){
                     className='chat-input'
             />
 
-            <button  className="send-button" onClick={sendMessage}>Send</button>
+            <button  className="send-button" onClick={sendMessage}>
+                <Send size={16}/>
+            </button>
            
         </div>
         
